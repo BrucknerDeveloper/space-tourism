@@ -1,0 +1,43 @@
+// contains all the resets, variables, mixins, and utility classes
+
+// --- VARIABLES ---
+
+$clr-dark: #0b0d17;
+$clr-light: #d0d6f9;
+$clr-white: #fff;
+
+$ff-heading: 'Bellefair', serif;
+$ff-subheading: 'Barlow Condensed', sans-serif;
+$ff-body: 'Bellefair', serif;
+
+$fs-h1: 150px;
+$fs-h2: 100px;
+$fs-h3: 56px;
+$fs-h4: 32px;
+$fs-h5: 28px;
+
+$fs-subh1: 28px;
+$fs-subh2: 14px;
+
+$fs-nav: 16px;
+$fs-body: 18px;
+
+// --- RESETS ---
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+// --- MIXINS ---
