@@ -1,26 +1,26 @@
-// contains all the resets, variables, mixins, and utility classes
+// contains all the resets, variables, mixins and utility classes
 
 // --- VARIABLES ---
 
-$clr-dark: #0b0d17;
-$clr-light: #d0d6f9;
-$clr-white: #fff;
+$clr-dark: hsl(230, 35%, 7%);
+$clr-light: hsl(231, 77%, 90%);
+$clr-white: hsl(0, 0%, 100%);
 
-$ff-heading: 'Bellefair', serif;
-$ff-subheading: 'Barlow Condensed', sans-serif;
-$ff-body: 'Bellefair', serif;
+$ff-serif: 'Bellefair', serif;
+$ff-sans-cond: 'Barlow Condensed', sans-serif;
+$ff-sans-normal: 'Barlow', sans-serif;
 
-$fs-h1: 150px;
-$fs-h2: 100px;
-$fs-h3: 56px;
-$fs-h4: 32px;
-$fs-h5: 28px;
+$fs-900: 150px;
+$fs-800: 100px;
+$fs-700: 56px;
+$fs-600: 32px;
+$fs-500: 28px;
+$fs-400: 18px;
+$fs-300: 16px;
+$fs-200: 14px;
 
-$fs-subh1: 28px;
-$fs-subh2: 14px;
-
-$fs-nav: 16px;
-$fs-body: 18px;
+$fw-400: 400;
+$fw-700: 700;
 
 // --- RESETS ---
 
@@ -28,8 +28,6 @@ $fs-body: 18px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font: inherit;
-  color: inherit;
 }
 
 a {
@@ -40,4 +38,99 @@ li {
   list-style-type: none;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: $fw-400;
+}
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+}
+
+//so images work correctly (e.g. when img is a flex item it doesnt stretch and keeps it original size and proportions)
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
 // --- MIXINS ---
+
+
+
+// --- UTILITY ---
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.basis-equal > * {
+  flex-basis: 100%;
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
+}
+
+.container {
+  padding-inline: 2em;
+  margin-inline: auto;
+  max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: var(--container-gap, 2rem);
+  grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0,30rem)) minmax(2rem, 1fr);
+}
+
+.grid-container > *:first-child {
+  grid-column: 2;
+}
+
+.grid-container > *:last-child {
+  grid-column: 3;
+}
+
+
+// typography
+
+.ff-serif { font-family: $ff-serif; }
+.ff-sans-cond { font-family: $ff-sans-cond; }
+.ff-sans-normal { font-family: $ff-sans-normal; }
+
+.letter-spacing-1 { letter-spacing: 4.75px }
+.letter-spacing-2 { letter-spacing: 2.7px;}
+.letter-spacing-3 { letter-spacing: 2.35px; }
+
+.fs-900 { font-size: $fs-900 }
+.fs-800 { font-size: $fs-800 }
+.fs-700 { font-size: $fs-700 }
+.fs-600 { font-size: $fs-600 }
+.fs-500 { font-size: $fs-500 }
+.fs-400 { font-size: $fs-400 }
+.fs-300 { font-size: $fs-300 }
+.fs-200 { font-size: $fs-200 }
+
+.text-dark { color: $clr-dark; }
+.text-light { color: $clr-light; }
+.text-white { color: $clr-white; }
+
+.bg-dark { background-color: $clr-dark; }
+.bg-light { background-color: $clr-light; }
+.bg-white { background-color: $clr-white; }
+
+.uppercase { text-transform: uppercase;  }

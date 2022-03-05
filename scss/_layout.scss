@@ -1,1 +1,18 @@
-// all the code handling the layout, which is the container and grid systems
+// all the code handling the layout
+
+body {
+    font-family: $ff-sans-normal;
+    font-size: $fs-400;
+    color: $clr-white;  
+    background-color: $clr-dark; 
+    line-height: 1.5; //Standard ist 1.4 in Browser, was aber sehr eng ist. 1.5 oder 1.6 ist besser (kann man immer machen)
+    min-height: 100vh;
+}
+
+.typography__column {
+    --flow-space: 30px;
+}
+  
+.typography__container > div {
+    flex-basis: 100%;
+}

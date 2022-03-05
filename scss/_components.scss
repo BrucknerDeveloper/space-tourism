@@ -1,1 +1,122 @@
 // everything that is reusable – buttons, navbars, cards, and so on
+
+// --- TYPOGRAPHY ---
+
+.numbered-title {
+  font-family: $ff-sans-cond;
+  font-size: $fs-500;
+  letter-spacing: 4.75px;
+  text-transform: uppercase;
+
+  & span {
+    font-weight: 700;
+    opacity: 25%;
+    padding-right: .65em;
+  }
+}
+
+// --- PRIMARY NAVIGATION ---
+
+.primary-nav {
+  --gap: 8rem;
+  justify-content: center;
+  padding: 2rem 0;
+  --underline-gap: 2rem;
+
+  & a {
+    & > span {
+      padding-right: 1rem;
+      font-weight: $fw-700;
+    }
+  }
+}
+
+.underline-indicators > * {
+  cursor: pointer;
+  padding: var(--underline-gap, 1rem) 0;
+  border-bottom: 2px solid transparentize($clr-white, 1);
+
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid transparentize($clr-white, .5);
+  }
+}
+
+.underline-indicators > .active {
+  border-bottom: 2px solid $clr-white;
+}
+
+// --- TAB NAVIGATION ---
+
+.tab-nav {
+  --gap: 2rem;
+  justify-content: center;
+  --underline-gap: .75rem;
+}
+
+// --- BUTTONS ---
+
+.btn-large {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  aspect-ratio: 1;
+  padding: 0 2em;
+  background-color: $clr-white;
+  border-radius: 50%;
+  
+}
+
+.btn-large::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-color: transparentize(#979797, .75);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 500ms linear, transform 500ms ease-out;
+  
+}
+
+.btn-large:hover::after,
+.btn-large:focus::after {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+// dot-indicators
+
+.dot-indicators > * {
+  border-radius: 50%;
+  padding: .5rem;
+  background-color: transparentize(#979797, .75);
+
+  &:hover {
+    background-color: transparentize(#979797, .25);
+  }
+}
+
+.dot-indicators > .active {
+  background-color: $clr-white;
+}
+
+// count-indicators
+
+.count-indicators > * {
+  width: 80px;
+  border-radius: 50%;
+  border: 2px solid $clr-white;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 1;
+  height: min-content;
+
+  &:hover,
+  &:focus {
+    background-color: $clr-white;
+    color: $clr-dark;
+  }
+}
+
