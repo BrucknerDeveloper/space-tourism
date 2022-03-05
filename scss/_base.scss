@@ -2,25 +2,56 @@
 
 // --- VARIABLES ---
 
-$clr-dark: hsl(230, 35%, 7%);
-$clr-light: hsl(231, 77%, 90%);
-$clr-white: hsl(0, 0%, 100%);
+:root {
+  /* colors */
+  --clr-dark: hsl(230, 35%, 7%);
+  --clr-light: hsl(231, 77%, 90%);
+  --clr-white: hsl(0, 0%, 100%);
+  
+  /* font-sizes */
+  --fs-900: clamp(80px, 10vw + 1rem, 150px);
+  --fs-800: 56px;
+  --fs-700: 24px;
+  --fs-600: 16px;
+  --fs-500: 28px;
+  --fs-400: 15px;
+  --fs-300: 16px;
+  --fs-200: 14px;
+    
+  /* font-families */
+  --ff-serif: "Bellefair", serif;
+  --ff-sans-cond: "Barlow Condensed", sans-serif;
+  --ff-sans-normal: "Barlow", sans-serif;
 
-$ff-serif: 'Bellefair', serif;
-$ff-sans-cond: 'Barlow Condensed', sans-serif;
-$ff-sans-normal: 'Barlow', sans-serif;
+  --fw-400: 400;
+  --fw-700: 700;
+}
 
-$fs-900: 150px;
-$fs-800: 100px;
-$fs-700: 56px;
-$fs-600: 32px;
-$fs-500: 28px;
-$fs-400: 18px;
-$fs-300: 16px;
-$fs-200: 14px;
+// scss variables for scss functions
 
-$fw-400: 400;
-$fw-700: 700;
+  $clr-dark: hsl(230, 35%, 7%);
+  $clr-light: hsl(231, 77%, 90%);
+  $clr-white: hsl(0, 0%, 100%);
+
+@media (min-width: 35em) {
+  :root {
+    --fs-800: 80px;
+    --fs-700: 40px;
+    --fs-600: 24px;
+    --fs-400: 16px;
+  }
+}
+
+
+@media (min-width: 45em) {
+  :root {
+    --fs-800: 100px;
+    --fs-700: 56px;
+    --fs-600: 32px;
+    --fs-400: 18px;
+  }
+}
+
 
 // --- RESETS ---
 
@@ -45,7 +76,7 @@ h4,
 h5,
 h6,
 p {
-    font-weight: $fw-400;
+    font-weight: var(--fw-400);
 }
 
 button {
@@ -85,6 +116,10 @@ img {
   margin-top: var(--flow-space, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 .container {
   padding-inline: 2em;
   margin-inline: auto;
@@ -92,45 +127,66 @@ img {
 }
 
 .grid-container {
+  text-align: center;
   display: grid;
-  column-gap: var(--container-gap, 2rem);
-  grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0,30rem)) minmax(2rem, 1fr);
+  place-items: center;
+  padding-inline: 1rem ;
 }
 
-.grid-container > *:first-child {
-  grid-column: 2;
+.grid-container * {
+  max-width: 50ch;
 }
 
-.grid-container > *:last-child {
-  grid-column: 3;
+@media (min-width: 45rem) {
+  .grid-container {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(2rem, 1fr) repeat(2, minmax(0,30rem)) minmax(2rem, 1fr);
+  }
+
+  .grid-container--home {
+    padding-bottom: calc(max(6rem, 20vh));
+    align-items: end;
+  }
+
+  .grid-container > *:first-child {
+    grid-column: 2;
+  }
+  
+  .grid-container > *:last-child {
+    grid-column: 3;
+  }
 }
+
+
+// color
+
+.text-dark { color: var(--clr-dark); }
+.text-light { color: var(--clr-light); }
+.text-white { color: var(--clr-white); }
+
+.bg-dark { background-color: var(--clr-dark); }
+.bg-light { background-color: var(--clr-light); }
+.bg-white { background-color: var(--clr-white); }
 
 
 // typography
 
-.ff-serif { font-family: $ff-serif; }
-.ff-sans-cond { font-family: $ff-sans-cond; }
-.ff-sans-normal { font-family: $ff-sans-normal; }
+.ff-serif { font-family: var(--ff-serif); } 
+.ff-sans-cond { font-family: var(--ff-sans-cond); } 
+.ff-sans-normal { font-family: var(--ff-sans-normal); } 
 
-.letter-spacing-1 { letter-spacing: 4.75px }
-.letter-spacing-2 { letter-spacing: 2.7px;}
-.letter-spacing-3 { letter-spacing: 2.35px; }
+.letter-spacing-1 { letter-spacing: 4.75px; } 
+.letter-spacing-2 { letter-spacing: 2.7px; } 
+.letter-spacing-3 { letter-spacing: 2.35px; } 
 
-.fs-900 { font-size: $fs-900 }
-.fs-800 { font-size: $fs-800 }
-.fs-700 { font-size: $fs-700 }
-.fs-600 { font-size: $fs-600 }
-.fs-500 { font-size: $fs-500 }
-.fs-400 { font-size: $fs-400 }
-.fs-300 { font-size: $fs-300 }
-.fs-200 { font-size: $fs-200 }
+.uppercase { text-transform: uppercase; }
 
-.text-dark { color: $clr-dark; }
-.text-light { color: $clr-light; }
-.text-white { color: $clr-white; }
-
-.bg-dark { background-color: $clr-dark; }
-.bg-light { background-color: $clr-light; }
-.bg-white { background-color: $clr-white; }
-
-.uppercase { text-transform: uppercase;  }
+.fs-900 { font-size: var(--fs-900); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }

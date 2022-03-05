@@ -1,12 +1,15 @@
 // all the code handling the layout
 
 body {
-    font-family: $ff-sans-normal;
-    font-size: $fs-400;
-    color: $clr-white;  
-    background-color: $clr-dark; 
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    color: var(--clr-white);  
+    background-color: var(--clr-dark); 
     line-height: 1.5; //Standard ist 1.4 in Browser, was aber sehr eng ist. 1.5 oder 1.6 ist besser (kann man immer machen)
     min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: min-content 1fr;
 }
 
 .typography__column {
