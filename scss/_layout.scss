@@ -12,10 +12,27 @@ body {
     grid-template-rows: min-content 1fr;
 }
 
-.typography__column {
-    --flow-space: 30px;
+/* ------------------- */
+/* Page specific       */
+/* ------------------- */
+
+/* home */
+
+.home {
+    background-image: url(./../GitHub/assets/home/background-home-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
 }
-  
-.typography__container > div {
-    flex-basis: 100%;
+
+@media (min-width: 35rem) {
+    .home {
+        background-image: url(./../GitHub/assets/home/background-home-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .home {
+        background-image: url(./../GitHub/assets/home/background-home-desktop.jpg);
+    }
 }
