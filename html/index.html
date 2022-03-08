@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../css/main.css" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,14 +18,15 @@
         <img class="logo" alt="space tourism logo" src="./../assets/shared/logo.svg">
         <!-- If image is a flex item it can cause problems, therefore put it in a div -->
       </div>
-      <!-- <nav class="primary-nav">
-        <ul class="flex underline-indicators">
-          <li class="active"><a  href="index.html"class="uppercase fs-300 text-white ff-sans-cond"><span>00</span> Home</a></li>
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation"></button>
+      <nav>
+        <ul id="primary-navigation" class="flex underline-indicators primary-navigation">
+          <li class="active"><a  href="index.html"class="letter-spacing-2 uppercase fs-300 text-white ff-sans-cond"><span>00</span> Home</a></li>
           <li><a href="#" class="letter-spacing-2 uppercase fs-300 text-white ff-sans-cond"><span>01</span> Destination</a></li>
           <li><a href="#" class="letter-spacing-2 uppercase fs-300 text-white ff-sans-cond"><span>02</span> Crew</a></li>
           <li><a href="#" class="letter-spacing-2 uppercase fs-300 text-white ff-sans-cond"><span>03</span> Technology</a></li>
         </ul>
-      </nav> -->
+      </nav>
     </header>
       
       <div class="grid-container grid-container--home">
@@ -41,5 +42,6 @@
         
       </div>
       
+      <script src="../scripts/script.js"></script>
   </body>
 </html>

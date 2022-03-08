@@ -7,6 +7,7 @@ body {
     background-color: var(--clr-dark); 
     line-height: 1.5; //Standard ist 1.4 in Browser, was aber sehr eng ist. 1.5 oder 1.6 ist besser (kann man immer machen)
     min-height: 100vh;
+    overflow-x: hidden;
 
     display: grid;
     grid-template-rows: min-content 1fr;
@@ -19,7 +20,7 @@ body {
 /* home */
 
 .home {
-    background-image: url(./../GitHub/assets/home/background-home-mobile.jpg);
+    background-image: url(./../assets/home/background-home-mobile.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -27,12 +28,12 @@ body {
 
 @media (min-width: 35rem) {
     .home {
-        background-image: url(./../GitHub/assets/home/background-home-tablet.jpg);
+        background-image: url(../assets/home/background-home-tablet.jpg);
     }
 }
 
 @media (min-width: 45rem) {
     .home {
-        background-image: url(./../GitHub/assets/home/background-home-desktop.jpg);
+        background-image: url(./../assets/home/background-home-desktop.jpg);
     }
 }
