@@ -37,3 +37,23 @@ body {
         background-image: url(./../assets/home/background-home-desktop.jpg);
     }
 }
+
+/* destination */
+
+.destination {
+    background-image: url(./../assets/destination/background-destination-mobile.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (min-width: 35rem) {
+    .destination {
+        background-image: url(../assets/destination/background-destination-tablet.jpg);
+    }
+}
+
+@media (min-width: 45rem) {
+    .destination {
+        background-image: url(./../assets/destination/background-destination-desktop.jpg);
+    }
+}
