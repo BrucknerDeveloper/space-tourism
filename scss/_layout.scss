@@ -46,6 +46,21 @@ body {
     background-size: cover;
 }
 
+.grid-container--destination {
+    place-items: center;
+
+    .numbered-title {
+        font-size: 16px;
+    }
+    .flex  {
+        justify-content: center;
+    }
+}
+
+.destination--planet {
+    width: 50%;
+}
+
 @media (min-width: 35rem) {
     .destination {
         background-image: url(../assets/destination/background-destination-tablet.jpg);
@@ -57,3 +72,4 @@ body {
         background-image: url(./../assets/destination/background-destination-desktop.jpg);
     }
 }
+
