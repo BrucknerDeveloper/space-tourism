@@ -44,7 +44,7 @@
 }
 
 
-@media (min-width: 45em) {
+@media (min-width: 50em) {
   :root {
     --fs-800: 100px;
     --fs-700: 56px;
@@ -136,9 +136,10 @@ img {
 
 .grid-container * {
   max-width: 50ch;
+  margin-inline: auto;
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
   .grid-container {
     text-align: left;
     column-gap: var(--container-gap, 2rem);
@@ -152,12 +153,12 @@ img {
 
   .grid-container > *:first-child {
     grid-column: 2;
-    justify-self: start;
+    margin-right: auto;
   }
   
   .grid-container > *:last-child {
     grid-column: 3;
-    justify-self: end;
+    margin-left: auto;
   }
 }
 

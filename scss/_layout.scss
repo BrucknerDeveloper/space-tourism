@@ -26,13 +26,17 @@ body {
     background-position: bottom center;
 }
 
+.grid-container--home > div {
+    margin-inline: 0;
+}
+
 @media (min-width: 35rem) {
     .home {
         background-image: url(../assets/home/background-home-tablet.jpg);
     }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .home {
         background-image: url(./../assets/home/background-home-desktop.jpg);
     }
@@ -47,29 +51,142 @@ body {
 }
 
 .grid-container--destination {
-    place-items: center;
-
-    .numbered-title {
+    grid-template-rows: min-content 1fr;
+    
+    & .numbered-title {
         font-size: 16px;
+        margin-inline: auto;
+        text-align: center;
     }
-    .flex  {
+    & .underline-indicators  {
         justify-content: center;
     }
+
+    & > div {
+        align-self: flex-start;
+    }
+
+    --gap: 0rem;
+}
+
+.destination--info .underline-indicators {
+    max-width: 300px;
+
+    & li {
+        padding-inline: .5rem;
+    }  
 }
 
 .destination--planet {
-    width: 50%;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 100%;
+
+    & img {
+        max-width: 200px;
+    }
+}
+
+.destination--description {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid transparentize($clr-white, .75);
+
+    & > .fs-900 {
+        margin-block: -.75rem;
+    }
+}
+
+.destination--numbers {
+    height: 140px;
+    margin: 0;
+    justify-content: space-between;
+    flex-direction: column;
+
+    & p {
+        font-size: 28px;
+    }
 }
 
 @media (min-width: 35rem) {
     .destination {
         background-image: url(../assets/destination/background-destination-tablet.jpg);
     }
+
+    .grid-container--destination {
+        
+        & .numbered-title {
+            font-size: var(--fs-600);
+            margin-inline: 1rem 0;
+            margin-bottom: 4rem;
+            text-align: left;
+        }
+    
+        --gap: 0rem;
+    }
+    
+    .destination--info .underline-indicators {
+        max-width: 300px;
+    
+        & li {
+            padding-inline: .5rem;
+        }  
+    }
+
+    .destination header {
+        margin-bottom: 3rem;
+    }
+
+    .destination--planet {
+        & img {
+            max-width: 50%;
+        }
+    }
+
+    .destination--info .underline-indicators li {
+        margin-inline: 1rem;
+    }
+
+    .destination--numbers {
+        flex-direction: row;
+    }
 }
 
-@media (min-width: 45rem) {
+@media (min-width: 50rem) {
     .destination {
         background-image: url(./../assets/destination/background-destination-desktop.jpg);
+    }
+
+    .destination--planet {
+        & img {
+            max-width: 500px;
+            width: 100%;
+        }
+    }
+
+    .destination--info {
+        margin-top: 5rem;
+    }
+
+    .destination--numbers {
+        justify-content: start;
+    
+        & > div:first-child {
+            margin-inline: 0 clamp(4rem, 7vw, 7rem);
+        }
+
+        & > div:last-child {
+            margin: 0;
+        }
+    }
+
+    .destination--info .underline-indicators {
+        max-width: none;
+        justify-content: start;
+
+        & li:first-child {
+            margin-left: 0;
+        }
     }
 }
 
