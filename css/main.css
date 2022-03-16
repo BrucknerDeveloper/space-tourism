@@ -319,6 +319,11 @@ body {
 
 .destination--planet img {
   max-width: 200px;
+  display: none;
+}
+
+.destination--planet .active-img {
+  display: block;
 }
 
 .destination--description {
@@ -345,6 +350,10 @@ body {
 
 .destination--numbers p {
   font-size: 28px;
+}
+
+.destination--numbers div {
+  --flow-space: 0rem;
 }
 
 @media (min-width: 35rem) {
@@ -404,6 +413,9 @@ body {
   }
   .destination--numbers > div:last-child {
     margin: 0;
+  }
+  .destination--numbers div {
+    --flow-space: .5rem;
   }
   .destination--info .underline-indicators {
     max-width: none;

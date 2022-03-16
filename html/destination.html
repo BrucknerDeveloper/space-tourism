@@ -32,34 +32,94 @@
     <main class="grid-container grid-container--destination flow">
       <div class="flow destination--planet">
         <h1 class="numbered-title"><span>01</span> Pick your Destination</h1>
-        <img class="destination--planet" src="../assets/destination/image-moon.png">
+        <img class="destination--planet active-img" data-planetimg="moon" src="../assets/destination/image-moon.png">
+        <img class="destination--planet" data-planetimg="mars" src="../assets/destination/image-mars.png">
+        <img class="destination--planet" data-planetimg="europa" src="../assets/destination/image-europa.png">
+        <img class="destination--planet" data-planetimg="titan" src="../assets/destination/image-titan.png">
       </div>
 
       <div class="destination--info flow"> 
         <nav>
           <ul class="underline-indicators flex">
-            <li class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light active">Moon</li>
-            <li class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light">Europa</li>
-            <li class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light">Titan</li>
-            <li class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light">Mars</li>
+            <li data-destination="moon" class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light active">Moon</li>
+            <li data-destination="mars" class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light">Mars</li>
+            <li data-destination="europa" class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light">Europa</li>
+            <li data-destination="titan" class="fs-200 ff-sans-cond letter-spacing-1 uppercase text-light">Titan</li>
           </ul>
         </nav>
-        <div class="destination--description">
-          <h2 class="fs-900 ff-serif uppercase">Moon</h2>
-          <p class="text-light">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain 
-            perspective and come back refreshed. While you’re there, take in some history by visiting 
-            the Luna 2 and Apollo 11 landing sites.</p>
-        </div>        
-        <div class="flex destination--numbers">
-          <div> 
-            <h3 class="uppercase text-light fs-200">AVG. Distance</h3>
-            <p class="fs-500 uppercase text-white ff-serif">384,400KM</p>
-          </div>
-          <div>
-            <h3 class="uppercase text-light fs-200">EST. Travel Time</h3>
-            <p class="fs-500 uppercase text-white ff-serif">3 Days</p>
+
+        <article data-article="moon">
+          <div class="destination--description">
+            <h2 class="fs-900 ff-serif uppercase">Moon</h2>
+            <p class="text-light">See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain 
+              perspective and come back refreshed. While you’re there, take in some history by visiting 
+              the Luna 2 and Apollo 11 landing sites.</p>
+          </div>        
+          <div class="flex destination--numbers">
+            <div class="flow"> 
+              <h3 class="uppercase text-light fs-200">AVG. Distance</h3>
+              <p class="fs-500 uppercase text-white ff-serif">384,400KM</p>
             </div>
-        </div>
+            <div class="flow">
+              <h3 class="uppercase text-light fs-200">EST. Travel Time</h3>
+              <p class="fs-500 uppercase text-white ff-serif">3 Days</p>
+              </div>
+          </div>
+        </article>
+
+        <article data-article="mars" hidden>
+          <div class="destination--description">
+            <h2 class="fs-900 ff-serif uppercase">Mars</h2>
+            <p class="text-light">Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons,
+               the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!</p>
+          </div>        
+          <div class="flex destination--numbers">
+            <div class="flow"> 
+              <h3 class="uppercase text-light fs-200">AVG. Distance</h3>
+              <p class="fs-500 uppercase text-white ff-serif">225 MIL. km</p>
+            </div>
+            <div class="flow">
+              <h3 class="uppercase text-light fs-200">EST. Travel Time</h3>
+              <p class="fs-500 uppercase text-white ff-serif">9 months</p>
+              </div>
+          </div>
+        </article>
+
+        <article data-article="europa" hidden>
+          <div class="destination--description">
+            <h2 class="fs-900 ff-serif uppercase">Europa</h2>
+            <p class="text-light">The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, 
+              it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.</p>
+          </div>        
+          <div class="flex destination--numbers">
+            <div class="flow"> 
+              <h3 class="uppercase text-light fs-200">AVG. Distance</h3>
+              <p class="fs-500 uppercase text-white ff-serif">628 MIL. km</p>
+            </div>
+            <div class="flow">
+              <h3 class="uppercase text-light fs-200">EST. Travel Time</h3>
+              <p class="fs-500 uppercase text-white ff-serif">3 years</p>
+              </div>
+          </div>
+        </article>
+
+        <article data-article="titan" hidden>
+          <div class="destination--description">
+            <h2 class="fs-900 ff-serif uppercase">Titan</h2>
+            <p class="text-light">The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home 
+              (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.</p>
+          </div>        
+          <div class="flex destination--numbers">
+            <div class="flow"> 
+              <h3 class="uppercase text-light fs-200">AVG. Distance</h3>
+              <p class="fs-500 uppercase text-white ff-serif">1.6 BIL. km</p>
+            </div>
+            <div class="flow">
+              <h3 class="uppercase text-light fs-200">EST. Travel Time</h3>
+              <p class="fs-500 uppercase text-white ff-serif">7 years</p>
+              </div>
+          </div>
+        </article>
       </div>
     </main>
       
