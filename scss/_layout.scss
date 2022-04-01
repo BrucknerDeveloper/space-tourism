@@ -32,7 +32,7 @@ body {
 
 @media (min-width: 35rem) {
     .home {
-        background-image: url(../assets/home/background-home-tablet.jpg);
+        background-image: url(./../assets/home/background-home-tablet.jpg);
     }
 }
 
@@ -54,7 +54,6 @@ body {
     grid-template-rows: min-content 1fr;
     
     & .numbered-title {
-        font-size: 16px;
         margin-inline: auto;
         text-align: center;
     }
@@ -125,7 +124,6 @@ body {
     .grid-container--destination {
         
         & .numbered-title {
-            font-size: var(--fs-600);
             margin-inline: 1rem 0;
             margin-bottom: 4rem;
             text-align: left;
@@ -203,3 +201,104 @@ body {
     }
 }
 
+
+
+/* crew */
+
+.crew {
+    background-color: rgba(15, 15, 19, 0.65);
+    background-image: url(../assets/crew/background-crew-mobile.jpg);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.grid-container--crew {
+    grid-template-rows: 50px minmax(150px, 250px) minmax(250px, 275px);
+}
+
+.crew__members {
+    border-bottom: 1px solid #383B4B;
+    max-width: 75ch;
+    width: 100%;
+}
+
+.crew__member {
+    height: 15rem;
+    padding-left: 10px;
+    margin-top: -20px;
+}
+
+.crew__nav {
+    width: min-content;;
+}
+
+.crew-details {
+    display: flex;
+    flex-direction: column;  
+    & h2 {
+        margin-top: 1.5rem;
+    }
+    & h1 {
+        margin-top: .2rem;
+    }
+    & p {
+        margin-top: .75rem;
+        line-height: 1.65rem;
+    }
+}
+
+@media (min-width: 35rem) {
+    .crew {
+        background-image: url(../assets/crew/background-crew-tablet.jpg);
+    }
+
+    .crew-details {
+        & nav { 
+            order: 2; 
+            margin-top: 3rem;
+        }
+        & > div { order: 1; }
+        & h2 {
+            margin-top: 0;
+        } 
+        & h1 {
+            margin-top: .2rem;
+        }  
+        & p {
+            line-height: 1.65rem;
+        }
+    }
+
+    .grid-container--crew {
+        grid-template-rows: initial;
+
+        & .numbered-title {
+            margin: 1rem auto 0 0;
+        }
+    }
+
+    .grid-container--crew {
+        & .numbered-title { order: 1 }
+        & .crew-details { order: 2 }
+        & .crew__members { order: 3 }
+    }
+
+    .crew__members {
+        place-self: flex-end;
+        border: none;
+    }
+
+    .crew__member {
+        height: 35rem;
+    }
+
+    
+}
+
+@media (min-width: 50rem) {
+    .crew {
+        background-image: url(../assets/crew/background-crew-desktop.jpg);
+    }
+}

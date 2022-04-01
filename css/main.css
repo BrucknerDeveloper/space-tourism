@@ -112,7 +112,7 @@ img {
   display: -ms-grid;
   display: grid;
   place-items: center;
-  padding-inline: 1rem;
+  padding-inline: clamp(2rem, 5vw, 3rem);
 }
 
 .grid-container * {
@@ -230,6 +230,10 @@ img {
   font-size: var(--fs-200);
 }
 
+.text-opacity-5 {
+  opacity: .5;
+}
+
 body {
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
@@ -262,7 +266,7 @@ body {
 
 @media (min-width: 35rem) {
   .home {
-    background-image: url(../assets/home/background-home-tablet.jpg);
+    background-image: url(./../assets/home/background-home-tablet.jpg);
   }
 }
 
@@ -287,7 +291,6 @@ body {
 }
 
 .grid-container--destination .numbered-title {
-  font-size: 16px;
   margin-inline: auto;
   text-align: center;
 }
@@ -364,7 +367,6 @@ body {
     --gap: 0rem;
   }
   .grid-container--destination .numbered-title {
-    font-size: var(--fs-600);
     margin-inline: 1rem 0;
     margin-bottom: 4rem;
     text-align: left;
@@ -428,9 +430,126 @@ body {
   }
 }
 
+/* crew */
+.crew {
+  background-color: rgba(15, 15, 19, 0.65);
+  background-image: url(../assets/crew/background-crew-mobile.jpg);
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.grid-container--crew {
+  -ms-grid-rows: 50px minmax(150px, 250px) minmax(250px, 275px);
+      grid-template-rows: 50px minmax(150px, 250px) minmax(250px, 275px);
+}
+
+.crew__members {
+  border-bottom: 1px solid #383B4B;
+  max-width: 75ch;
+  width: 100%;
+}
+
+.crew__member {
+  height: 15rem;
+  padding-left: 10px;
+  margin-top: -20px;
+}
+
+.crew__nav {
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+}
+
+.crew-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.crew-details h2 {
+  margin-top: 1.5rem;
+}
+
+.crew-details h1 {
+  margin-top: .2rem;
+}
+
+.crew-details p {
+  margin-top: .75rem;
+  line-height: 1.65rem;
+}
+
+@media (min-width: 35rem) {
+  .crew {
+    background-image: url(../assets/crew/background-crew-tablet.jpg);
+  }
+  .crew-details nav {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    margin-top: 3rem;
+  }
+  .crew-details > div {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .crew-details h2 {
+    margin-top: 0;
+  }
+  .crew-details h1 {
+    margin-top: .2rem;
+  }
+  .crew-details p {
+    line-height: 1.65rem;
+  }
+  .grid-container--crew {
+    -ms-grid-rows: initial;
+        grid-template-rows: initial;
+  }
+  .grid-container--crew .numbered-title {
+    margin: 1rem auto 0 0;
+  }
+  .grid-container--crew .numbered-title {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .grid-container--crew .crew-details {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .grid-container--crew .crew__members {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .crew__members {
+    place-self: flex-end;
+    border: none;
+  }
+  .crew__member {
+    height: 35rem;
+  }
+}
+
+@media (min-width: 50rem) {
+  .crew {
+    background-image: url(../assets/crew/background-crew-desktop.jpg);
+  }
+}
+
 .numbered-title {
   font-family: var(--ff-sans-cond);
-  font-size: var(--fs-200);
+  font-size: var(--fs-500);
   letter-spacing: 4.75px;
   text-transform: uppercase;
 }
@@ -542,6 +661,10 @@ body {
   }
   .primary-navigation {
     padding-inline: 3rem;
+    height: 100%;
+  }
+  nav {
+    height: 100%;
   }
 }
 
@@ -656,7 +779,7 @@ body {
 
 .dot-indicators > * {
   border-radius: 50%;
-  padding: .5rem;
+  padding: 5px;
   background-color: rgba(151, 151, 151, 0.25);
 }
 
@@ -666,6 +789,12 @@ body {
 
 .dot-indicators > .active {
   background-color: var(--clr-white);
+}
+
+@media (min-width: 50rem) {
+  .dot-indicators > * {
+    padding: 7.5px;
+  }
 }
 
 .count-indicators > * {
