@@ -325,10 +325,6 @@ body {
   display: none;
 }
 
-.destination--planet .active-img {
-  display: block;
-}
-
 .destination--description {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
@@ -445,6 +441,14 @@ body {
       grid-template-rows: 50px minmax(150px, 250px) minmax(250px, 275px);
 }
 
+.grid-container .crew-details {
+  margin-inline: auto;
+}
+
+.grid-container p {
+  max-width: 50ch;
+}
+
 .crew__members {
   border-bottom: 1px solid #383B4B;
   max-width: 75ch;
@@ -455,6 +459,7 @@ body {
   height: 15rem;
   padding-left: 10px;
   margin-top: -20px;
+  display: none;
 }
 
 .crew__nav {
@@ -542,6 +547,63 @@ body {
 }
 
 @media (min-width: 50rem) {
+  .grid-container--crew {
+    -ms-grid-rows: min-content 1fr;
+        grid-template-rows: -webkit-min-content 1fr;
+        grid-template-rows: min-content 1fr;
+        grid-template-areas: 'space title img space2' 'space content img space2';
+  }
+  .grid-container--crew .numbered-title {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: title;
+  }
+  .grid-container .crew-details {
+    margin-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-bottom: 5rem;
+  }
+  .crew .crew__nav {
+    margin-inline: 0;
+    margin-top: 7.5rem;
+  }
+  .crew-details {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: content;
+    -ms-grid-column: 2 !important;
+    grid-column: 2 !important;
+    max-width: 50ch;
+  }
+  .crew-details p {
+    max-width: 45ch;
+    margin-inline: 0;
+  }
+  .crew__members {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 3;
+    grid-area: img;
+  }
+  .crew__member {
+    width: 100%;
+    height: auto;
+    max-width: 34rem;
+  }
+  .img-smaller {
+    max-width: 30rem;
+  }
   .crew {
     background-image: url(../assets/crew/background-crew-desktop.jpg);
   }
@@ -813,5 +875,9 @@ body {
 .count-indicators > *:hover, .count-indicators > *:focus {
   background-color: var(--clr-white);
   color: var(--clr-dark);
+}
+
+.active-img {
+  display: block !important;
 }
 /*# sourceMappingURL=main.css.map */
