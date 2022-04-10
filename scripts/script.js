@@ -72,3 +72,30 @@ function setArticleAndActiveLinkCrew(article, link) {
     else
         article.hidden = true;    
 }
+
+// TECHNOLOGY
+
+const techImgs = document.querySelectorAll("[data-techImg]");
+const techLinks = document.querySelectorAll("[data-techNav]");
+const techArticles = document.querySelectorAll("[data-techCrew]")
+
+console.log(techLinks)
+
+document.addEventListener("DOMContentLoaded", setTechImgs());
+
+window.addEventListener("resize", () => {
+    setTechImgs();
+})
+
+function setTechImgs() {
+    if(window.innerWidth <= 800) {
+        techImgs.forEach(img => {
+            img.src = `../assets/technology/image-${img.dataset.techimg}-landscape.jpg`
+        })
+    }
+    else {
+        techImgs.forEach(img => {
+            img.src = `../assets/technology/image-${img.dataset.techimg}-portrait.jpg`
+        })
+    }
+}
